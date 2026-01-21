@@ -1,8 +1,12 @@
 # Contributing
 
+## Requirements
+- .NET SDK 8.x recommended
+
 ## Setup
-- Requirements: (node/python/go/dotnet version)
-- Copy `.env.example` to `.env`
+```bash
+dotnet restore
+```
 
 ## Development
 - Install deps: `...`
