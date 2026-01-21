@@ -1,18 +1,15 @@
 # Architecture
 
 ## Overview
-Registry service stores device identity and metadata:
-- device id
-- model/hardware info
-- firmware version
-- status flags
+Agent runs on Linux devices and pushes telemetry to the ingest API.
 
-## Boundaries
-- Exposes REST API to gateway/UI
-- Abstracts persistence behind repository interfaces
-- NoSQL is an implementation detail (later)
+## Responsibilities
+- Collect metrics (collectors)
+- Optional local buffering (storage)
+- Delivery with retries (sender)
+- Simple health endpoint (optional)
 
-## Target structure
-- API layer calls Core services
-- Core defines interfaces and domain rules
-- Infrastructure provides MongoDB (later)
+## Data flow
+1) Collect -> normalize -> enqueue
+2) Dequeue -> send -> ack
+3) On failure: retry with backoff

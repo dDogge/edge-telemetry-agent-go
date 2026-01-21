@@ -1,11 +1,11 @@
 # Contributing
 
 ## Requirements
-- .NET SDK 8.x recommended
+- Go 1.22+ recommended
 
-## Setup
+## Run locally
 ```bash
-dotnet restore
+go run ./cmd/edge-agent
 ```
 
 ## Development

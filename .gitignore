@@ -1,11 +1,8 @@
 bin/
-obj/
-.vs/
-*.user
-*.suo
-*.userosscache
-*.sln.docstates
-.idea/
+dist/
+*.exe
+*.out
 .env
-appsettings.Development.json
 .DS_Store
+.vscode/
+.idea/
